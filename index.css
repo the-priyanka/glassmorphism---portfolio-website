@@ -48,6 +48,9 @@ body {
   -webkit-tap-highlight-color: transparent;
   padding: 5vh 15px;
 }
+.hide-scrolling {
+  overflow-y: hidden;
+}
 body::before {
   content: "";
   position: fixed;
@@ -78,6 +81,9 @@ img {
   vertical-align: middle;
   border-radius: 10px;
 }
+ul {
+  list-style: none;
+}
 section {
   background-color: var(--white-alpha-25);
   border: 1px solid var(--white-alpha-40);
@@ -88,6 +94,10 @@ section {
 .main {
   max-width: 1200px;
   margin: auto;
+  transition: all 0.5s ease-in-out;
+}
+.main.fade-out {
+  opacity: 0;
 }
 .container {
   padding: 0 40px;
@@ -383,6 +393,11 @@ Portfolio Section
   height: 100%;
   width: 100%;
   z-index: 200;
+  visibility: hidden;
+  overflow-y: auto;
+}
+.portfolio-popup.open {
+  visibility: visible;
   overflow-y: auto;
 }
 .pp-inner {
@@ -400,6 +415,13 @@ Portfolio Section
   width: 100%;
   border: 1px solid var(--white-alpha-40);
   backdrop-filter: var(--backdrop-filter-blur);
+  opacity: 0;
+  transform: scale(0.9);
+}
+.portfolio-popup.open .pp-content{
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.5s ease;
 }
 .pp-header {
   position: relative;
@@ -414,4 +436,27 @@ Portfolio Section
   position: absolute;
   right: -40px;
   top: -40px;
+}
+.pp-thumbnail img {
+  border-radius: 10px;
+}
+.pp-header h3 {
+  font-size: 25px;
+  text-transform: capitalize;
+  margin: 20px 0 15px;
+}
+.pp-body .description {
+  margin-bottom: 20px;
+}
+.pp-body .general-info li {
+  margin-bottom: 10px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.pp-body .general-info li span {
+  font-weight: 300;
+}
+.pp-body .general-info li a {
+  text-transform: lowercase;
+  color: var(--main-color);
 }
