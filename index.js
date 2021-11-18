@@ -23,6 +23,8 @@ document.addEventListener("click", (e) => {
     e.target.classList.contains("link-item") &&
     e.target.hash !== ""
   ) {
+    // activate the overlay to prevent multiple clicks
+    document.querySelector(".overlay").classList.add("active")
     navToggle.classList.add("hide")
     if (e.target.classList.contains("nav-item")) {
       toggleNavbar();
@@ -38,6 +40,7 @@ document.addEventListener("click", (e) => {
       window.scrollTo(0, 0);
       document.body.classList.remove("hide-scrolling");
       navToggle.classList.remove("hide")
+      document.querySelector(".overlay").classList.remove("active")
     }, 500);
   }
 });
