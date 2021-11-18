@@ -283,6 +283,7 @@ button {
   top: 80%;
   left: -30px;
   opacity: 0.6;
+  animation: zoomInOut 8s linear infinite;
 }
 /* overlay */
 .overlay {
