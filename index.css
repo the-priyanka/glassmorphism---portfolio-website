@@ -210,21 +210,29 @@ button {
   }
 }
 @keyframes zoomInOut {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(0.5);
   }
   50% {
     transform: scale(1);
-    
   }
 }
 @keyframes bounceTop {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(-50px);
   }
   50% {
     transform: translateY(0px);
-    
+  }
+}
+@keyframes spin{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
   }
 }
 
@@ -238,43 +246,43 @@ button {
   left: 50%;
   transform: translateX(-50%);
 }
-.bg-circles div{
+.bg-circles div {
   position: absolute;
   border-radius: 50%;
 }
-.bg-circles .circle-1{
-    height: 60px;
-    width: 60px;
-    background-color: var(--blue);
-    left: 5%;
-    top: 10%;
-    opacity: 0.3;
-    animation: zoomInOut 8s linear infinite;
+.bg-circles .circle-1 {
+  height: 60px;
+  width: 60px;
+  background-color: var(--blue);
+  left: 5%;
+  top: 10%;
+  opacity: 0.3;
+  animation: zoomInOut 8s linear infinite;
 }
-.bg-circles .circle-2{
-    height: 80px;
-    width: 80px;
-    background-color: var(--main-color);
-    left: 30%;
-    top: 50%;
-    opacity: 0.4;
-    animation: bounceTop 5s ease-in-out infinite;
+.bg-circles .circle-2 {
+  height: 80px;
+  width: 80px;
+  background-color: var(--main-color);
+  left: 30%;
+  top: 50%;
+  opacity: 0.4;
+  animation: bounceTop 5s ease-in-out infinite;
 }
-.bg-circles .circle-3{
-    height: 120px;
-    width: 120px;
-    background-color: var(--white);
-    top: 40%;
-    right: -60px;
-    opacity: 0.6;
+.bg-circles .circle-3 {
+  height: 120px;
+  width: 120px;
+  background-color: var(--white);
+  top: 40%;
+  right: -60px;
+  opacity: 0.6;
 }
-.bg-circles .circle-4{
-    height: 50px;
-    width: 50px;
-    background-color: var(--orange);
-    top: 80%;
-    left: -30px;
-    opacity: 0.6;
+.bg-circles .circle-4 {
+  height: 50px;
+  width: 50px;
+  background-color: var(--orange);
+  top: 80%;
+  left: -30px;
+  opacity: 0.6;
 }
 /* overlay */
 .overlay {
@@ -290,6 +298,50 @@ button {
 }
 .overlay.active {
   visibility: visible;
+}
+
+/* Page Loader */
+.page-loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--white-alpha-25);
+  backdrop-filter: var(--backdrop-filter-blur);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6 ease;
+}
+.page-loader.fade-out{
+  opacity: 0;
+}
+.page-loader div {
+  border: 2px solid transparent;
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  border-top-color: transparent !important;
+  border-bottom-color: transparent !important;
+  animation: spin 1s linear infinite;
+}
+.page-loader div:nth-child(1) {
+  height: 60px;
+  width: 60px;
+  border-color: var(--main-color);
+}
+.page-loader div:nth-child(2) {
+  height: 45px;
+  width: 45px;
+  border-color: var(--blue);
+  animation-duration: 1.2s;
+}
+.page-loader div:nth-child(3) {
+  height: 30px;
+  width: 30px;
+  border-color: var(--orange);
 }
 /*------------------------------------------------------
  Header 
@@ -774,63 +826,66 @@ Portfolio Section
 }
 
 /* Responsive */
-@media(max-width:991px){
-  .container{
+@media (max-width: 991px) {
+  .container {
     padding: 0;
   }
   .home-text,
-  .home-img{
+  .home-img {
     width: 100%;
   }
-  .home-text{
+  .home-text {
     text-align: center;
   }
-  .home-img{
+  .home-img {
     order: -1;
   }
-  .home-img .img-box{
+  .home-img .img-box {
     max-width: 300px;
   }
-  .home-text .btn{
+  .home-text .btn {
     margin: 0 7px 15px;
   }
-  .portfolio-item{
+  .portfolio-item {
     width: calc(50% - 30px);
   }
 }
-@media(max-width:767px){
+@media (max-width: 767px) {
   .contact-form,
   .contact-info,
   .about-img,
-  .about-text{
+  .about-text {
     width: 100%;
   }
-  .about-text{
+  .about-text {
     margin-top: 30px;
   }
-  .portfolio-item{
+  .portfolio-item {
     width: calc(100% - 30px);
   }
-  .pp-inner{
+  .pp-inner {
     padding: 30px 15px;
   }
-  .contact-info{
+  .contact-info {
     order: -1;
     margin-bottom: 15px;
   }
+  .contact-info-item {
+    padding: 0;
+  }
 }
-@media(max-width:575px){
+@media (max-width: 575px) {
   .section-title h2,
-  .header .nav-inner ul li a{
+  .header .nav-inner ul li a {
     font-size: 35px;
   }
-  .home-text h1{
+  .home-text h1 {
     font-size: 30px;
   }
-  .home-text h2{
+  .home-text h2 {
     font-size: 18px;
   }
-  .pp-header h3{
+  .pp-header h3 {
     font-size: 20px;
   }
 }
