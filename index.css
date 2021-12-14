@@ -19,6 +19,15 @@ Variables
   --backdrop-filter-blur: blur(5px);
 }
 
+[data-theme="dark"] {
+  --main-color: #ffc107;
+  --white-alpha-40: rgba(0, 0, 0, 0.4);
+  --white-alpha-25: rgba(0, 0, 0, 0.25);
+  /* --pink-light: #000000;
+  --cyan-light: #000000; */
+  --white: #000000;
+}
+
 /* -----------------------------------------
 Global Settings
 -------------------------------------------- */
@@ -227,11 +236,11 @@ button {
     transform: translateY(0px);
   }
 }
-@keyframes spin{
-  0%{
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }
@@ -316,7 +325,7 @@ button {
   justify-content: center;
   transition: opacity 0.6 ease;
 }
-.page-loader.fade-out{
+.page-loader.fade-out {
   opacity: 0;
 }
 .page-loader div {
@@ -344,6 +353,95 @@ button {
   width: 30px;
   border-color: var(--orange);
 }
+
+/*------------------------------------------------------
+ Dark Mode Toggle 
+ ------------------------------------------------------- */
+/* .theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  position: absolute;
+  top: 50px;
+  transition: all 0.3s ease;
+  margin-left: 8%;
+}
+
+.theme-switch-wrapper-sticky {
+  margin-top: -13px;
+}
+
+.theme-switch-wrapper-sticky {
+  margin-top: -13px;
+}
+
+.theme-switch-wrapper span {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.toggle-text {
+  position: relative;
+  top: -4px;
+  right: 5px;
+  color: black;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background: var(--white-alpha-25);
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+  border: 2px solid var(--white-alpha-40);
+}
+
+.slider::before {
+  background: bisque;
+  bottom: 2px;
+  content: "";
+  height: 26px;
+  left: 1px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background: black;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
+.fas {
+  font-size: 30px;
+  margin-right: 5px;
+} */
+
 /*------------------------------------------------------
  Header 
  ------------------------------------------------------- */
@@ -850,6 +948,9 @@ Portfolio Section
   .portfolio-item {
     width: calc(50% - 30px);
   }
+  /* .theme-switch-wrapper {
+    left: 90px;
+  } */
 }
 @media (max-width: 767px) {
   .contact-form,
@@ -874,6 +975,9 @@ Portfolio Section
   .contact-info-item {
     padding: 0;
   }
+  /* .theme-switch-wrapper {
+    left: 77px;
+  } */
 }
 @media (max-width: 575px) {
   .section-title h2,
@@ -889,4 +993,7 @@ Portfolio Section
   .pp-header h3 {
     font-size: 20px;
   }
+  /* .theme-switch-wrapper {
+    margin: 67px;
+  } */
 }

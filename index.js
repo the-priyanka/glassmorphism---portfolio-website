@@ -1,13 +1,12 @@
-window.addEventListener("load", ()=>{
-  document.querySelector(".main").classList.remove("hidden")
-  document.querySelector(".home-section").classList.add("active")
-  // ------------------- Page Loader -------------------------- 
-  document.querySelector(".page-loader").classList.add("fade-out")
+window.addEventListener("load", () => {
+  document.querySelector(".main").classList.remove("hidden");
+  document.querySelector(".home-section").classList.add("active");
+  // ------------------- Page Loader --------------------------
+  document.querySelector(".page-loader").classList.add("fade-out");
   setTimeout(() => {
-    document.querySelector(".page-loader").style.display = "none"
+    document.querySelector(".page-loader").style.display = "none";
   }, 1000);
-
-})
+});
 // ------------------- Toggle Navbar ------------------------
 const navToggle = document.querySelector(".nav-toggle");
 
@@ -34,8 +33,8 @@ document.addEventListener("click", (e) => {
     e.target.hash !== ""
   ) {
     // activate the overlay to prevent multiple clicks
-    document.querySelector(".overlay").classList.add("active")
-    navToggle.classList.add("hide")
+    document.querySelector(".overlay").classList.add("active");
+    navToggle.classList.add("hide");
     if (e.target.classList.contains("nav-item")) {
       toggleNavbar();
     } else {
@@ -49,8 +48,8 @@ document.addEventListener("click", (e) => {
       document.querySelector(e.target.hash).classList.add("active");
       window.scrollTo(0, 0);
       document.body.classList.remove("hide-scrolling");
-      navToggle.classList.remove("hide")
-      document.querySelector(".overlay").classList.remove("active")
+      navToggle.classList.remove("hide");
+      document.querySelector(".overlay").classList.remove("active");
     }, 500);
   }
 });
@@ -111,3 +110,20 @@ function portfolioItemDetails(portfolio) {
   document.querySelector(".pp-body").innerHTML =
     portfolio.querySelector(".portfolio-item-details").innerHTML;
 }
+
+// // dark and light theme
+// const toggleSwitch = document.querySelector("input[type='checkbox']");
+
+// // Switch theme dynamically
+// function switchTheme(event) {
+//   if (event.target.checked) {
+//     document.documentElement.setAttribute("data-theme", "dark");
+//     localStorage.setItem("theme", "dark");
+//   } else {
+//     document.documentElement.setAttribute("data-theme", "light");
+//     localStorage.setItem("theme", "light");
+//   }
+// }
+
+// // event listener
+// toggleSwitch.addEventListener("change", switchTheme);
