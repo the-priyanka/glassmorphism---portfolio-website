@@ -944,6 +944,9 @@ Portfolio Section
   .container {
     padding: 0;
   }
+  .theme-switch-wrapper {
+    left: 40px;
+  }
   .home-text,
   .home-img {
     width: 100%;
@@ -970,6 +973,9 @@ Portfolio Section
   .about-img,
   .about-text {
     width: 100%;
+  }
+  .theme-switch-wrapper {
+    left: 30px;
   }
   .about-text {
     margin-top: 30px;
@@ -1002,7 +1008,7 @@ Portfolio Section
   .pp-header h3 {
     font-size: 20px;
   }
-  /* .theme-switch-wrapper {
-    margin: 67px;
-  } */
+  .theme-switch-wrapper {
+    left: 20px;
+  }
 }
