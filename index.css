@@ -372,9 +372,9 @@ button {
   align-items: center;
   justify-content: start;
   z-index: 1000;
-  position: fixed;
-  right: 120px;
-  bottom: 44px;
+  position: absolute;
+  right: 50px;
+  bottom: 40px;
   height: auto;
   transition: all 0.3s ease;
 }
