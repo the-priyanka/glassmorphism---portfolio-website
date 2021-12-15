@@ -10,6 +10,8 @@ window.addEventListener("load", () => {
 // ------------------- Toggle Navbar ------------------------
 const navToggle = document.querySelector(".nav-toggle");
 
+const themeSwitchWrapper = document.querySelector(".theme-switch-wrapper")
+
 const header = document.querySelector(".header");
 
 navToggle.addEventListener("click", () => {
@@ -18,9 +20,7 @@ navToggle.addEventListener("click", () => {
   document.body.classList.toggle("hide-scrolling");
 });
 function hideSection() {
-  document
-    .querySelector("section.active")
-    .classList.toggle("fade-out");
+  document.querySelector("section.active").classList.toggle("fade-out");
 }
 function toggleNavbar() {
   header.classList.toggle("active");
@@ -111,19 +111,29 @@ function portfolioItemDetails(portfolio) {
     portfolio.querySelector(".portfolio-item-details").innerHTML;
 }
 
-// // dark and light theme
-// const toggleSwitch = document.querySelector("input[type='checkbox']");
+// dark and light theme
+const toggleSwitch = document.querySelector("input[type='checkbox']");
 
-// // Switch theme dynamically
-// function switchTheme(event) {
-//   if (event.target.checked) {
-//     document.documentElement.setAttribute("data-theme", "dark");
-//     localStorage.setItem("theme", "dark");
-//   } else {
-//     document.documentElement.setAttribute("data-theme", "light");
-//     localStorage.setItem("theme", "light");
-//   }
-// }
+// Switch theme dynamically
+function switchTheme(event) {
+  if (event.target.checked) {
+    document.documentElement.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light");
+  }
+}
 
-// // event listener
-// toggleSwitch.addEventListener("change", switchTheme);
+// event listener
+toggleSwitch.addEventListener("change", switchTheme);
+
+
+// Check localStorage for theme 
+const currentTheme = localStorage.getItem("theme")
+if (currentTheme) {
+  document.documentElement.setAttribute("data-theme", currentTheme)
+  if (currentTheme === "dark") {
+    toggleSwitch.checked = true
+  }
+}
